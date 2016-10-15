@@ -79,6 +79,6 @@ ids = prod.search(
      ('description','<>',False)], limit=10)
 for pro in prod.browse(ids):
     woo.update(pro)
-    filename = './img/{}.png'.format(pro.default_code)
+    filename = './img/default_code_:{}.png'.format(pro.default_code)
     with open(filename, 'wb') as f:
         f.write(pro.image.decode('base64'))

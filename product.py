@@ -80,15 +80,8 @@ class woo_product():
                 print 'desc >', item['description']
 
     def list_categories(self):
-        r = self._wcapi.get('products/categories')
+        r = self._wcapi.get('products/categories?per_page=100')
         categories = []
-        print r
-        print r.status_code
-        print r.headers['Link']
-        print r.encoding
-        print r.text
-
-
         for cat in r.json():
             if cat['parent'] <> 0:
                 name = '--- ' + cat['name']
@@ -107,89 +100,3 @@ class woo_product():
 # r = wcapi.get('products/categories')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
-
-
-[{u'count': 0,
-  u'description': u'',
-  u'parent': 84,
-  u'image': [],
-  u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/98'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/84'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 98,
-  u'menu_order': 0,
-  u'slug': u'accesorios',
-  u'name': u'Accesorios'},
-
- {u'count': 0, u'description': u'', u'parent': 82, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/85'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/82'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 85, u'menu_order': 0, u'slug': u'bases', u'name': u'Bases'},
-
- {u'count': 0, u'description': u'', u'parent': 84, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/95'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/84'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 95, u'menu_order': 0, u'slug': u'brochas', u'name': u'Brochas'},
-
- {u'count': 0, u'description': u'', u'parent': 84, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/97'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/84'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 97, u'menu_order': 0, u'slug': u'combos', u'name': u'Combos'},
-
- {u'count': 0, u'description': u'', u'parent': 82, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/86'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/82'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 86, u'menu_order': 0, u'slug': u'correctores', u'name': u'Correctores'},
- {u'count': 0, u'description': u'', u'parent': 0, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/82'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 82, u'menu_order': 0, u'slug': u'cosmeticos', u'name': u'Cosm\xe9ticos'},
- {u'count': 0, u'description': u'', u'parent': 82, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/88'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/82'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 88, u'menu_order': 0, u'slug': u'delineadores', u'name': u'Delineadores'},
- {u'count': 0, u'description': u'', u'parent': 0, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/83'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 83, u'menu_order': 0, u'slug': u'higiene-facial', u'name': u'Higiene facial'},
- {u'count': 0, u'description': u'', u'parent': 83, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/92'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/83'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 92, u'menu_order': 0, u'slug': u'humectacion-hidratacion',
-  u'name': u'Humectaci\xf3n / Hidrataci\xf3n'},
-
- {u'count': 0, u'description': u'', u'parent': 82, u'image': [], u'display': u'default',
-  u'_links': {
-  u'self': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/89'}],
-  u'up': [{u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories/82'}],
-  u'collection': [
-      {u'href': u'http://makeoverlab.com.ar/wp-json/wc/v1/products/categories'}]},
-  u'id': 89, u'menu_order': 0, u'slug': u'labiales', u'name': u'Labiales'}
-
- ]
