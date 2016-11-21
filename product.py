@@ -36,7 +36,7 @@ class woo_product():
     def _do_create(self, prod):
         data = self._encode(prod)
         ret = self._wcapi.post('products', data)
-        print 'create', ret.status_code, prod.name
+        print 'create', ret.status_code, prod.default_code, prod.name
         if ret.status_code == 201:
             print 'actualiza woo id', prod.woo_id, ret.json()['id']
             prod.woo_id = ret.json()['id']

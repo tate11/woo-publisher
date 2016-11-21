@@ -34,8 +34,8 @@ wcapi = API(
     version="wc/v1"
 )
 
-# PASSWORD = raw_input('Enter password: ')
-PASSWORD = 'melquiades'
+PASSWORD = raw_input('Enter password: ')
+
 
 login = {
     #    'server': '52.205.148.95',
@@ -76,9 +76,10 @@ ids = prod.search(
     [('woo_categ', '<>', False),
      ('image','<>',False),
      ('default_code','<>',False),
-     ('description','<>',False)], limit=10)
+     ('description','<>',False),
+     ('woo_id','=',False)], limit=10)
 for pro in prod.browse(ids):
     woo.update(pro)
-    filename = './img/default_code_:{}.png'.format(pro.default_code)
+    filename = './img/default_code_{}.png'.format(pro.default_code)
     with open(filename, 'wb') as f:
         f.write(pro.image.decode('base64'))
